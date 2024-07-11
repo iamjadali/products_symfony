@@ -1,0 +1,6 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+login:
+    path: /api/login
+    controller: lexik_jwt_authentication.controller.authentication
