@@ -14,8 +14,8 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class CreateUserCommand extends Command
 {
     protected static $defaultName = 'app:create-user';
-    private $entityManager;
-    private $passwordEncoder;
+    private EntityManagerInterface $entityManager;
+    private UserPasswordEncoderInterface $passwordEncoder;
 
     public function __construct(EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder)
     {
@@ -24,7 +24,7 @@ class CreateUserCommand extends Command
         $this->passwordEncoder = $passwordEncoder;
     }
 
-    protected function configure()
+    protected function configure():void
     {
         $this
             ->setDescription('Create a new user')

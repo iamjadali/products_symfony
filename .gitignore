@@ -23,3 +23,7 @@
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 /nbproject/private/
+
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###

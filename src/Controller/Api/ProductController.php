@@ -19,8 +19,8 @@ use Symfony\Component\Serializer\Exception\NotNormalizableValueException;
  */
 class ProductController extends AbstractController
 {
-    private $productRepository;
-    private $entityManager;
+    private ProductRepository $productRepository;
+    private EntityManagerInterface $entityManager;
 
     public function __construct(ProductRepository $productRepository, EntityManagerInterface $entityManager)
     {
