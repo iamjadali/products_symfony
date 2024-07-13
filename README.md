@@ -196,12 +196,12 @@ docker rm -f <container_id_or_name>
 
 #Task-3: Integrate Static Code Analysis(Static Code Analysis)
 #Deliverables:
-#Deliverable-1:(phpstan.neon & phpcs.xml files exist in root directory on gitHub-Repository:https://github.com/iamjadali/products_symfony)
-#Documentation-1.1:Configure PHPStan with appropriate Levels(0-8) and Rules
-#Install PHPStan.neon Symfony Extension(Run this command):
+#Deliverable-3.1:(phpstan.neon & phpcs.xml files exist in root directory on gitHub-Repository:https://github.com/iamjadali/products_symfony)
+#Documentation-3.1:Configure PHPStan with appropriate Levels(0-8) and Rules
+#3.1.1:Install PHPStan.neon Symfony Extension(Run this command):
 composer require --dev phpstan/phpstan-symfony
 
-#Create a Simple phpstan.neon Configuration File(in root directory):
+#3.1.2:Create a Simple phpstan.neon Configuration File(in root directory):
 includes:
     - vendor/phpstan/phpstan-symfony/extension.neon
     - vendor/phpstan/phpstan-symfony/rules.neon
@@ -215,36 +215,36 @@ parameters:
         container_xml_path: var/cache/dev/App_KernelDevDebugContainer.xml
     tmpDir: var/cache/phpstan
 
-#Run PHPStan(Run this command):
+#3.1.3:Run PHPStan(Run this command):
 vendor/bin/phpstan analyse
 
-#Documentation-1.2:Set up PHP_CodeSniffer with a PSR-12 standard:
-#1.2.1:Install PHP_CodeSniffer(Run this command):
+#Documentation-3.2:Set up PHP_CodeSniffer with a PSR-12 standard:
+#3.2.1:Install PHP_CodeSniffer(Run this command):
 sudo apt install php-codesniffer
 
-#1.2.2:Verify Installation(Run this command):
+#3.2.2:Verify Installation(Run this command):
 phpcs --version
 
-#1.2.3:Set PSR-12 Standard(Run this command):
+#3.2.3:Set PSR-12 Standard(Run this command):
 sudo phpcs --config-set default_standard PSR12
 
-#1.2.4:Run PHP_CodeSniffer(Run this command):
+#3.2.4:Run PHP_CodeSniffer(Run this command):
 phpcs /var/www/html/products_symfony
-#Creating a phpcs.xml File:(exists in root directory on gitHub-Repository:https://github.com/iamjadali/products_symfony)
+#3.2.5:Creating a phpcs.xml File:(exists in root directory on gitHub-Repository:https://github.com/iamjadali/products_symfony)
 => create a new file named phpcs.xml in root directory.
-#Using phpcs.xml with PHP_CodeSniffer(Run this command):
+#3.2.6:Using phpcs.xml with PHP_CodeSniffer(Run this command):
 phpcs --report=summary --colors
 => --report=summary:Generates a summary report after checking.
 => --colors:Colorizes the output for easier readability.
 
-#Deliverable-2:Analysis Results:
-#2.1:PHPStan Analysis Results:
+#Deliverable-3.2:Analysis Results:
+#3.2.1:PHPStan Analysis Results:
 => Showing 4 Errors with Level:5 
 => Most Error Types: e.g: Property App\Entity\User::$id has no type specified.
 => Showing 40 Errors with Level:max(8) 
 => Most Error Types: e.g: Property App\Entity\User::$id has no type specified.
 
-#2.2:PHP_CodeSniffer Analysis Results:
+#3.2.2:PHP_CodeSniffer Analysis Results:
 => Showing 23-Error of /src directory and 29-Errors in my other developed code directories.
 => Most Error Types: 
 e.g: Expected at least 1 space before "."; 0 found.
