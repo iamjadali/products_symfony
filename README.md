@@ -195,6 +195,41 @@ docker rm -f <container_id_or_name>
 
 ------------------------------------------------------------------------------
 
+#Task-3: Integrate Static Code Analysis(Static Code Analysis)
+#Deliverables:
+#Deliverable-1:(phpstan.neon file exists in root directory on gitHub-Repository:https://github.com/iamjadali/products_symfony)
+#Documentation:
+#Guide to Correct phpstan.neon Configuration:
+#Install PHPStan Symfony Extension(Run this command):
+composer require --dev phpstan/phpstan-symfony
+
+#Create a Simple phpstan.neon Configuration File(in root directory):
+includes:
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-symfony/rules.neon
+
+parameters:
+    level: max
+    paths:
+        - src
+        - tests
+    symfony:
+        container_xml_path: var/cache/dev/App_KernelDevDebugContainer.xml
+    tmpDir: var/cache/phpstan
+
+#Run PHPStan(Run this command):
+vendor/bin/phpstan analyse
+
+#Deliverable-2:Analysis Results:
+=> Showing 4 Errors with Level:5 
+=> Most Error Types: e.g: Property App\Entity\User::$id has no type specified.
+=> Showing 40 Errors with Level:max(8) 
+=> Most Error Types: e.g: Property App\Entity\User::$id has no type specified.
+
+
+
+------------------------------------------------------------------------------
+
 #Task-4:Document
 #Deliverables:(README.md file exists in root directory on gitHub-Repository:https://github.com/iamjadali/products_symfony))
 #Documentation:
